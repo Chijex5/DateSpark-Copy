@@ -4,35 +4,41 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>DateSpark — My Plans</title>
+    <link rel="stylesheet" href="style.css">
   </head>
 
-  <body>
+  <body class="plans-page">
     <!-- Skip link -->
-    <a href="#main-content">Skip to content</a>
+    <a class="skip-link" href="#main-content">Skip to content</a>
 
     <!-- HEADER -->
     <header>
-      <nav aria-label="Primary">
-        <a href="/generate.html" aria-current="page">Generate</a>
-        <a href="/my-plans.html">My Plans</a>
-        <a href="/browse.html">Browse</a>
+      <nav class="navbar">
+          <!-- Logo -->
+          <a href="/" aria-label="DateSpark Home" class="logo">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles-icon lucide-sparkles"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/><path d="M20 2v4"/><path d="M22 4h-4"/><circle cx="4" cy="20" r="2"/></svg>
+          <span class="sr-only">DateSpark</span>
+          </a>
+          <!-- Primary nav -->
+          <a href="/generate.html" class="middle">Generate</a>
+          <a href="/my-plans.html" class="middle active">My Plans</a>
+          <a href="/browse.html" class="middle">Browse</a>
+          <!-- Auth -->
+          <a href="/login.html" class="auth">Login</a>
+          <a href="/signup.html" class="signup">Sign Up</a>
       </nav>
+
+      <h1 id="plans-title" class="plans-title">My Saved Spark Plans</h1>
+      <p>Curate your journey of connection and romance.</p>
     </header>
 
     <!-- MAIN -->
     <main id="main-content">
-      <!-- Page heading -->
-      <section aria-labelledby="plans-title">
-        <div>
-          <h1 id="plans-title">My Saved Spark Plans</h1>
-          <p>Curate your journey of connection and romance.</p>
-        </div>
-
         <!-- Controls row: tabs + search -->
-        <section aria-label="Plans controls">
+        <section aria-label="Plans controls" class="plans-controls">
           <!-- Tabs (semantic buttons) -->
-          <nav aria-label="Plan status">
-            <button type="button" aria-current="page">
+          <nav aria-label="Plan status" class="plans-tabs">
+            <button type="button" aria-current="page" class="plans-tab-active">
               Upcoming <span aria-label="3 upcoming plans">(3)</span>
             </button>
             <button type="button">
@@ -41,7 +47,7 @@
           </nav>
 
           <!-- Search -->
-          <form aria-label="Search plans" role="search">
+          <form aria-label="Search plans" role="search" class="plans-search">
             <label for="plan-search" class="sr-only">Find a specific plan</label>
             <input
               id="plan-search"
@@ -52,128 +58,119 @@
             />
           </form>
         </section>
-      </section>
 
       <!-- Plans grid -->
-      <section aria-label="Upcoming plans">
-        <div aria-label="Plans list">
-          <!-- Card 1 -->
-          <article aria-labelledby="plan-1-title">
-            <div>
-              <figure>
-                <img
-                  src=""
-                  alt="Starlit rooftop picnic setting"
-                  width="600"
-                  height="360"
-                />
-              </figure>
+      <section aria-label="Upcoming plans" class="plans-grid">
+        <!-- Card 1 -->
+        <article aria-labelledby="plan-1-title" class="plan-card">
+          <figure class="plan-media">
+            <img
+              src=""
+              alt="Starlit rooftop picnic setting"
+              width="600"
+              height="360"
+            />
+          </figure>
 
-              <!-- Card action: delete -->
-              <button type="button" aria-label="Remove Starlit Rooftop Picnic">
-                🗑
-              </button>
+          <!-- Card action: delete -->
+          <button type="button" aria-label="Remove Starlit Rooftop Picnic" class="plan-remove">
+            🗑
+          </button>
 
-              <h2 id="plan-1-title">Starlit Rooftop Picnic</h2>
+          <h2 id="plan-1-title" class="plan-title">Starlit Rooftop Picnic</h2>
 
-              <!-- tags -->
-              <p aria-label="Plan tags">
-                <span>Romantic</span>
-                <span>NN</span>
-                <span>3 hrs</span>
-              </p>
-            </div>
+          <!-- tags -->
+          <p aria-label="Plan tags" class="plan-tags">
+            <span>Romantic</span>
+            <span>NN</span>
+            <span>3 hrs</span>
+          </p>
 
-            <p>
-              A curated evening with artisanal snacks, plush blankets, and a
-              telescope for star-gazing.
-            </p>
+          <p>
+            A curated evening with artisanal snacks, plush blankets, and a
+            telescope for star-gazing.
+          </p>
 
-            <!-- Card actions -->
-            <div aria-label="Plan actions">
-              <a href="/plans/starlit-rooftop-picnic">View Details</a>
-              <button type="button">Done</button>
-            </div>
-          </article>
+          <!-- Card actions -->
+          <div aria-label="Plan actions" class="plan-actions">
+            <a href="/plans/starlit-rooftop-picnic" class="plan-link">View Details</a>
+            <button type="button" class="plan-done">Done</button>
+          </div>
+        </article>
 
-          <!-- Card 2 -->
-          <article aria-labelledby="plan-2-title">
-            <div>
-              <figure>
-                <img
-                  src=""
-                  alt="Neon-lit vintage arcade machines"
-                  width="600"
-                  height="360"
-                />
-              </figure>
+        <!-- Card 2 -->
+        <article aria-labelledby="plan-2-title" class="plan-card">
+          <figure class="plan-media">
+            <img
+              src=""
+              alt="Neon-lit vintage arcade machines"
+              width="600"
+              height="360"
+            />
+          </figure>
 
-              <button type="button" aria-label="Remove Vintage Arcade Date">
-                🗑
-              </button>
+          <button type="button" aria-label="Remove Vintage Arcade Date" class="plan-remove">
+            🗑
+          </button>
 
-              <h2 id="plan-2-title">Vintage Arcade Date</h2>
+          <h2 id="plan-2-title" class="plan-title">Vintage Arcade Date</h2>
 
-              <p aria-label="Plan tags">
-                <span>Playful</span>
-                <span>N</span>
-                <span>4 hrs</span>
-              </p>
-            </div>
+          <p aria-label="Plan tags" class="plan-tags">
+            <span>Playful</span>
+            <span>N</span>
+            <span>4 hrs</span>
+          </p>
 
-            <p>
-              Connect over nostalgia with classic pinball, neon lights, and
-              shareable milkshakes.
-            </p>
+          <p>
+            Connect over nostalgia with classic pinball, neon lights, and
+            shareable milkshakes.
+          </p>
 
-            <div aria-label="Plan actions">
-              <a href="/plans/vintage-arcade-date">View Details</a>
-              <button type="button">Done</button>
-            </div>
-          </article>
+          <div aria-label="Plan actions" class="plan-actions">
+            <a href="/plans/vintage-arcade-date" class="plan-link">View Details</a>
+            <button type="button" class="plan-done">Done</button>
+          </div>
+        </article>
 
-          <!-- Card 3 -->
-          <article aria-labelledby="plan-3-title">
-            <div>
-              <figure>
-                <img
-                  src=""
-                  alt="Young plants sprouting in a garden bed"
-                  width="600"
-                  height="360"
-                />
-              </figure>
+        <!-- Card 3 -->
+        <article aria-labelledby="plan-3-title" class="plan-card">
+          <figure class="plan-media">
+            <img
+              src=""
+              alt="Young plants sprouting in a garden bed"
+              width="600"
+              height="360"
+            />
+          </figure>
 
-              <button type="button" aria-label="Remove Botanical Garden Walk">
-                🗑
-              </button>
+          <button type="button" aria-label="Remove Botanical Garden Walk" class="plan-remove">
+            🗑
+          </button>
 
-              <h2 id="plan-3-title">Botanical Garden Walk</h2>
+          <h2 id="plan-3-title" class="plan-title">Botanical Garden Walk</h2>
 
-              <p aria-label="Plan tags">
-                <span>Serene</span>
-                <span>Free</span>
-                <span>2 hrs</span>
-              </p>
-            </div>
+          <p aria-label="Plan tags" class="plan-tags">
+            <span>Serene</span>
+            <span>Free</span>
+            <span>2 hrs</span>
+          </p>
 
-            <p>
-              Quiet time together among rare flora and hidden sculpture paths.
-              Perfect for deep conversations.
-            </p>
+          <p>
+            Quiet time together among rare flora and hidden sculpture paths.
+            Perfect for deep conversations.
+          </p>
 
-            <div aria-label="Plan actions">
-              <a href="/plans/botanical-garden-walk">View Details</a>
-              <button type="button">Done</button>
-            </div>
-          </article>
-        </div>
+          <div aria-label="Plan actions" class="plan-actions">
+            <a href="/plans/botanical-garden-walk" class="plan-link">View Details</a>
+            <button type="button" class="plan-done">Done</button>
+          </div>
+        </article>
       </section>
     </main>
 
     <!-- FOOTER -->
     <footer>
-      <section aria-label="Footer brand">
+      <section aria-label="Footer brand" class="footer-brand">
         <a href="/" aria-label="DateSpark Home">
           <span aria-hidden="true">♥</span>
           <span>DateSpark</span>
